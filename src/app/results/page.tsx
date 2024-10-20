@@ -182,8 +182,9 @@ const ResultsContent = () => {
         ) : courses.length === 0 ? (
           <p className="text-white">No results found for &quot;{course}&quot;. Please try another search.</p>
         ) : (
-          <div className="flex">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-start lg:justify-between">
             {/* Sidebar */}
+            <div className='lg:w-1/3 w-full h-auto lg:h-full lg:sticky top-0'>
             <SideBar
               professors={professors}
               selectedProfessor={selectedProfessor}
@@ -203,9 +204,10 @@ const ResultsContent = () => {
               setSelectedSection={setSelectedSection}
               routeType={routeType}
             />
+            </div>
   
             {/* Right content area */}
-            <div className="w-2/3 pl-4 mt-10">
+            <div className="lg:w-2/3 w-full pl-4 mt-10 lg:mt-10">
               {selectedSection ? (
                 <div className="flex flex-col p-4 rounded-lg shadow-md h-full gap-4 bg-gray-300 bg-opacity-30">
                   <h2 className="text-3xl mt-4 font-extrabold mb-4 text-center text-cyan-500 drop-shadow-md">{`${selectedSection.subject_id} ${selectedSection.course_number}`}</h2>
